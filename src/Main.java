@@ -11,9 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("view/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        Parent root = FXMLLoader.load(getClass().getResource("view/login.fxml"));
+        primaryStage.setTitle("Login");
+        primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
 
         Users user = new Users (0,"user1","user1","1234","456-h-756","ADMIN",1);
@@ -22,7 +22,7 @@ public class Main extends Application {
             System.out.println("Sucess, out = 200");
         }
         catch(Exception e){
-            System.out.println("Nmz na bazu se spojit jebiga");
+            System.out.println("Nema konekcije na bazu. Zanemari sve greške.");
         }
 
     }
