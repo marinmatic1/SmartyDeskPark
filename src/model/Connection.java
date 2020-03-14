@@ -12,10 +12,10 @@ public class Connection {
     private java.sql.Connection connection;
 
     public Connection() {
-        this.host = "localhost";
-        this.user = "root";
-        this.password = "";
-        this.db = "e-konzultacije";
+        this.host = "62.31.23.222:3306";
+        this.user = "cloud";
+        this.password = "WeIgHt123";
+        this.db = "smartpark";
     }
 
     public Connection(String host, String user, String password, String db) {
@@ -38,6 +38,7 @@ public class Connection {
                         this.db+"?user="+
                         this.user+"&password="+
                         this.password+"&useSSL=false";
+        System.out.println(connectionString);
         this.connection = DriverManager.getConnection(connectionString);
     }
     public void disconnect () throws Exception {

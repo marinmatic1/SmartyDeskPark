@@ -14,9 +14,9 @@ public class Users {
     private String password;
     private String plates;
     private String role;
-    private boolean approval;
+    private int approval;
 
-    public Users(int id, String name, String username, String password, String plates, String role, boolean approval) {
+    public Users(int id, String name, String username, String password, String plates, String role, int approval) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -74,23 +74,23 @@ public class Users {
         this.role = role;
     }
 
-    public boolean isApproval() {
+    public int getApproval() {
         return approval;
     }
 
-    public void setApproval(boolean approval) {
+    public void setApproval(int approval) {
         this.approval = approval;
     }
 
     public static Users add(Users user) {
         try {
-            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("INSERT INTO users VALUES (null, ?, ?, ?, ?, ?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("INSERT INTO users VALUES (null, ?, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
             stmnt.setString(1, user.getName());
             stmnt.setString(2, user.getUsername());
             stmnt.setString(3, user.getPassword());
             stmnt.setString(4, user.getPlates());
             stmnt.setString(5, user.getRole());
-            stmnt.setBoolean(6, user.isApproval());
+            stmnt.setInt(6, user.getApproval());
             stmnt.executeUpdate();
 
             ResultSet rs = stmnt.getGeneratedKeys();
