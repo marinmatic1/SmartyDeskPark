@@ -1,5 +1,10 @@
 package model;
 
+import javax.xml.crypto.Data;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Users {
     public Users() {
     }
@@ -77,7 +82,33 @@ public class Users {
         this.approval = approval;
     }
 
-    
+    public static Users add(Users user) {
+        try {
+            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("INSERT INTO users VALUES (null, ?, ?, ?, ?, ?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            stmnt.setString(1, user.getName());
+            stmnt.setString(2, user.getUsername());
+            stmnt.setString(3, user.getPassword());
+            stmnt.setString(4, user.getPlates());
+            stmnt.setString(5, user.getRole());
+            stmnt.setBoolean(6, user.isApproval());
+            stmnt.executeUpdate();
+
+            ResultSet rs = stmnt.getGeneratedKeys();
+            if(rs.next()){
+                user.setId(rs.getInt(1));
+            }
+            return user;
+        }
+
+    catch (SQLException e){
+        System.out.println("Nisam uspio dodati korisnika: " + e.getMessage());
+        return null;
+        }
+    }
+
+
+
+
 
 
 
