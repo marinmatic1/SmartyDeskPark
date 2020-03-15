@@ -7,9 +7,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Window;
+import model.AlertHelper;
 import model.Users;
 
 import java.net.URL;
@@ -33,6 +36,8 @@ public class adduserController implements Initializable {
     @FXML
     Button backBtn;
 
+
+
     String Role;
     ObservableList<String> role = FXCollections.observableArrayList();
 
@@ -45,13 +50,18 @@ public class adduserController implements Initializable {
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
         String plates =plateTxt.getText();
+        Window owner = dodajBtn.getScene().getWindow();
 
         if(name.equals("") || username.equals("")|| password.equals("") || plates.equals("") || Role.equals("")){
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Svi podaci nisu unijeti");
             return;
         }
 
         Users u = new Users(0,name,username,password,plates,Role,1);
         Users.add(u);
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspijeh!",
+                "Korisnik uspješno dodan");
         //popuniKorisnike();
     }
 

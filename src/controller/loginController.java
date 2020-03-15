@@ -59,19 +59,16 @@ public class loginController implements Initializable {
 
                 if (logiraniKorisnik.getRole().equals("ADMIN")) {
                     u.showNewWindow("administracija", event);
-                } else if (logiraniKorisnik.getRole().equals("KORISNIK")){
-
-                messageLabel.setText("Nemate pravo pristupa ovoj stranici");
-                messageLabel.setTextFill(Color.web("#FF0000"));
-                return;
+                } else if (logiraniKorisnik.getRole().equals("KORISNIK")) {
+                    AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                            "Nemate pravo pristupa");
+                    return;
                 }
-
             }
             else{
-                messageLabel.setText("Nemate pravo pristupa ovoj stranici");
-                messageLabel.setTextFill(Color.web("#FF0000"));
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Unijeti podati netočni");
                 return;
-
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Window;
+import model.AlertHelper;
 import model.Users;
 
 import java.net.URL;
@@ -41,13 +43,20 @@ public class usersController implements Initializable {
     }
 
     public void deleteUser(ActionEvent ev){
-        Users u = (Users) this.tableTbl.getSelectionModel().getSelectedItem();
-        if(u==null){
+        Window owner = deleteBtn.getScene().getWindow();
+
+        Users user = (Users) this.tableTbl.getSelectionModel().getSelectedItem();
+        if (user==null){
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Označite korisnika za brisanje");
             return;
         }
         else{
-            Users.remove(u);
-            this.popuniKorisnike();
+            user.setApproval(0);
+            Users.update(user);
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspijeh!",
+                    "Korisnik "+ user.getName() + " uspješno izbrisan");
+            popuniKorisnike();
         }
     }
 
