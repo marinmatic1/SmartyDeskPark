@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.administracijaController">
+   <children>
+      <Label layoutX="34.0" layoutY="33.0" prefHeight="37.0" prefWidth="220.0" text="Dobrodošli u administraciju">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="approvalsBtn" layoutX="34.0" layoutY="96.0" mnemonicParsing="false" onAction="#openApprovals" prefHeight="48.0" prefWidth="201.0" text="Zahtjevi" />
+      <Button fx:id="usersBtn" layoutX="34.0" layoutY="164.0" mnemonicParsing="false" onAction="#openUsers" prefHeight="48.0" prefWidth="201.0" text="Upravljaj korisnicima" />
+      <Button fx:id="reservationsBtn" layoutX="34.0" layoutY="234.0" mnemonicParsing="false" onAction="#openReservations" prefHeight="48.0" prefWidth="201.0" text="Upravljaj rezervacijima" />
+      <Button fx:id="backBtn" layoutX="440.0" layoutY="333.0" mnemonicParsing="false" onAction="#back" prefHeight="37.0" prefWidth="123.0" text="Back" />
+   </children>
+</AnchorPane>

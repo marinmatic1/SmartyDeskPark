@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adduserController">
+   <children>
+      <Label layoutX="33.0" layoutY="24.0" prefHeight="37.0" prefWidth="220.0" text="Dodaj korisnika">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="202.0" prefHeight="27.0" prefWidth="176.0" text="Uloga" />
+      <Label layoutX="33.0" layoutY="148.0" prefHeight="27.0" prefWidth="176.0" text="Lozinka:" />
+      <Label layoutX="33.0" layoutY="175.0" prefHeight="27.0" prefWidth="176.0" text="Registracijska tablica:" />
+      <Label layoutX="33.0" layoutY="121.0" prefHeight="27.0" prefWidth="176.0" text="Korisnicko ime:" />
+      <Label layoutX="33.0" layoutY="94.0" prefHeight="27.0" prefWidth="176.0" text="Ime:" />
+      <Button fx:id="dodajBtn" layoutX="289.0" layoutY="231.0" mnemonicParsing="false" onAction="#addUser" prefHeight="25.0" prefWidth="111.0" text="Dodaj korisnika" />
+      <ChoiceBox fx:id="roleChoice" layoutX="221.0" layoutY="203.0" prefHeight="25.0" prefWidth="176.0" />
+      <TextField fx:id="plateTxt" layoutX="221.0" layoutY="175.0" prefHeight="27.0" prefWidth="176.0" promptText="Unesi registracijsku tablicu" />
+      <TextField fx:id="passwordTxt" layoutX="221.0" layoutY="148.0" prefHeight="27.0" prefWidth="176.0" promptText="Unesi lozinku" />
+      <TextField fx:id="usernameTxt" layoutX="221.0" layoutY="121.0" prefHeight="27.0" prefWidth="176.0" promptText="Unesi korisnicko ime" />
+      <TextField fx:id="nameTxt" layoutX="221.0" layoutY="94.0" prefHeight="27.0" prefWidth="176.0" promptText="Unesi ime" />
+      <Button fx:id="backBtn" layoutX="286.0" layoutY="338.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Svi korisnici" />
+   </children>
+</AnchorPane>

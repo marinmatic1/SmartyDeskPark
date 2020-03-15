@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.usersController">
+   <children>
+      <Label layoutX="23.0" layoutY="14.0" prefHeight="37.0" prefWidth="220.0" text="Svi korisnici">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="backBtn" layoutX="429.0" layoutY="358.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Administracija" />
+      <Button fx:id="deleteBtn" layoutX="429.0" layoutY="245.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="25.0" prefWidth="111.0" text="Izbrisi korisnika" />
+      <Label layoutX="129.0" layoutY="249.0" prefHeight="17.0" prefWidth="229.0" text="button uredi   korisnikaa ??" />
+      <Button fx:id="openAddUserBtn" layoutX="429.0" layoutY="331.0" mnemonicParsing="false" onAction="#openAdduser" prefHeight="27.0" prefWidth="111.0" text="Dodaj korisnika" />
+      <TableView fx:id="tableTbl" layoutX="12.0" layoutY="51.0" prefHeight="178.0" prefWidth="545.0">
+         <columns>
+            <TableColumn fx:id="nameTbl" prefWidth="128.0" text="Ime" />
+            <TableColumn fx:id="usernameTbl" prefWidth="102.0" text="Korisnicko ime" />
+            <TableColumn fx:id="plateTbl" prefWidth="139.0" text="Registracijska tablica" />
+            <TableColumn fx:id="roleTbl" prefWidth="141.0" text="Uloga" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

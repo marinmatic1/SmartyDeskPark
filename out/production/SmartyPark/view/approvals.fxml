@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.approvalsController">
+   <children>
+      <Label layoutX="34.0" layoutY="41.0" prefHeight="37.0" prefWidth="194.0" text="Upravljaj zahtjevima">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <TableView fx:id="tableTbl" layoutX="14.0" layoutY="78.0" prefHeight="177.0" prefWidth="569.0">
+         <columns>
+            <TableColumn fx:id="nameTbl" prefWidth="62.0" text="Ime" />
+            <TableColumn fx:id="usernameTbl" prefWidth="105.0" text="Korisnicko ime" />
+            <TableColumn fx:id="passwordTbl" prefWidth="71.0" text="Lozinka" />
+            <TableColumn fx:id="platesTbl" prefWidth="143.0" text="Registracijska tablica" />
+            <TableColumn fx:id="roleTbl" prefWidth="74.0" text="Uloga" />
+            <TableColumn fx:id="approvalTbl" prefWidth="78.0" text="Potvrda" />
+         </columns>
+      </TableView>
+      <Button fx:id="backBtn" layoutX="438.0" layoutY="334.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Administracija" />
+      <Button fx:id="deleteBtn" layoutX="327.0" layoutY="265.0" mnemonicParsing="false" onAction="#deleteZahtjev" prefHeight="25.0" prefWidth="111.0" text="Izbrisi zahtjev" />
+   </children>
+</AnchorPane>

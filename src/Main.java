@@ -16,14 +16,14 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
 
-        Users user = new Users (0,"user1","user1","1234","456-h-756","ADMIN",1);
+        /*Users user = new Users (0,"user1","user1","1234","456-h-756","ADMIN",1);
         try {
             Users.add(user);
             System.out.println("Sucess, out = 200");
         }
         catch(Exception e){
             System.out.println("Nema konekcije na bazu. Zanemari sve greške.");
-        }
+        }*/
 
     }
 
