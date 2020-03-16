@@ -105,6 +105,7 @@ public class Users {
             if(rs.next()){
                 user.setId(rs.getInt(1));
             }
+            stmnt.close();
             return user;
         }
 
@@ -131,6 +132,7 @@ public class Users {
                         rs.getInt(7)
                 );
             }
+            stmnt.close();
             return null;
         } catch (SQLException e) {
             System.out.println("Korisnik se ne moze izvuci iz baze " + e.getMessage());
@@ -143,6 +145,7 @@ public class Users {
             PreparedStatement stmnt = Database.CONNECTION.prepareStatement("DELETE FROM users WHERE ID=?");
             stmnt.setInt(1, user.getId());
             stmnt.executeUpdate();
+            stmnt.close();
             return true;
         } catch (SQLException e) {
             System.out.println("Nisam uspio pobrisati korisnika: " + e.getMessage());
@@ -161,6 +164,7 @@ public class Users {
             stmnt.setInt(6, user.getApproval());
             stmnt.setInt(7, user.getId());
             stmnt.executeUpdate();
+            stmnt.close();
             return true;
         } catch (SQLException e) {
             System.out.println("Nisam uspio urediti korisnika: " + e.getMessage());
@@ -186,6 +190,7 @@ public class Users {
                         rs.getInt(7)
                 ));
             }
+            stmnt.close();
             return users;
         } catch (SQLException e) {
             System.out.println("Nisam uspio izvuci korisnike iz baze: " + e.getMessage());
@@ -211,6 +216,7 @@ public class Users {
                         rs.getInt(7)
                 ));
             }
+            stmnt.close();
             return users;
         } catch (SQLException e) {
             System.out.println("Nisam uspio izvuci odobrene korisnike iz baze: " + e.getMessage());
@@ -235,6 +241,7 @@ public class Users {
                         rs.getInt(7)
                 ));
             }
+            stmnt.close();
             return users;
         } catch (SQLException e) {
             System.out.println("Nisam uspio izvuci neodobrene korisnike iz baze: " + e.getMessage());
