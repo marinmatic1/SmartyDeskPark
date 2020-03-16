@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.reservationsController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.reservationsController">
+   <children>
+      <Label layoutX="33.0" layoutY="24.0" prefHeight="37.0" prefWidth="220.0" text="Sve rezervacije">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableTbl" layoutX="14.0" layoutY="61.0" prefHeight="178.0" prefWidth="545.0">
+         <columns>
+            <TableColumn fx:id="idTbl" prefWidth="35.0" text="Id" />
+            <TableColumn fx:id="vrijemeodTbl" prefWidth="126.0" text="Vrijeme od: " />
+            <TableColumn fx:id="vrijemedoTbl" prefWidth="117.0" text="Vrijeme do: " />
+            <TableColumn fx:id="iduserTbl" prefWidth="112.0" text="Korisnik usluge: " />
+            <TableColumn fx:id="platesTbl" prefWidth="143.0" text="Registracijska tablica" />
+         </columns>
+      </TableView>
+      <Button fx:id="backBtn" layoutX="448.0" layoutY="359.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Administracija" />
+      <Button fx:id="deleteBtn" layoutX="448.0" layoutY="246.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="25.0" prefWidth="111.0" text="Izbriši rezervaciju" />
+      <Button fx:id="openAddRBtn" layoutX="448.0" layoutY="319.0" mnemonicParsing="false" onAction="#openAddreservation" prefHeight="27.0" prefWidth="111.0" text="Dodaj rezervaciju" />
+   </children>
 </AnchorPane>

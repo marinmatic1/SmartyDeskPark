@@ -58,7 +58,7 @@ public class approvalsController implements Initializable {
         else{
             user.setApproval(1);
             Users.update(user);
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspijeh!",
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
                     "Korisnik "+ user.getName() + " uspješno odobren");
             popuniKorisnike();
         }

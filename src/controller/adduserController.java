@@ -54,7 +54,7 @@ public class adduserController implements Initializable {
 
         if(name.equals("") || username.equals("")|| password.equals("") || plates.equals("") || Role.equals("")){
             AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
-                    "Svi podaci nisu unijeti");
+                    "Svi podaci nisu unešeni");
             return;
         }
 

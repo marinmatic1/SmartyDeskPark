@@ -54,7 +54,7 @@ public class usersController implements Initializable {
         else{
             user.setApproval(0);
             Users.update(user);
-            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspijeh!",
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
                     "Korisnik "+ user.getName() + " uspješno izbrisan");
             popuniKorisnike();
         }
