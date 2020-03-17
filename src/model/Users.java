@@ -202,7 +202,7 @@ public class Users {
         ObservableList<Users> users = FXCollections.observableArrayList();
         try {
             Statement stmnt = Database.CONNECTION.createStatement();
-            ResultSet rs = stmnt.executeQuery("SELECT * FROM users WHERE potvrda IS TRUE");
+            ResultSet rs = stmnt.executeQuery("SELECT * FROM users WHERE potvrda = 1");
 
 
             while(rs.next()){
@@ -227,7 +227,7 @@ public class Users {
         ObservableList<Users> users = FXCollections.observableArrayList();
         try {
             Statement stmnt = Database.CONNECTION.createStatement();
-            ResultSet rs = stmnt.executeQuery("SELECT * FROM users WHERE potvrda IS False");
+            ResultSet rs = stmnt.executeQuery("SELECT * FROM users WHERE potvrda =2");
 
 
             while(rs.next()){

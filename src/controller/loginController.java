@@ -56,8 +56,8 @@ public class loginController implements Initializable {
             if (rs.next()) {
                 this.logiraniKorisnik = Users.get(rs.getInt(1));
                 Utils u = new Utils();
-
                 if (logiraniKorisnik.getRole().equals("ADMIN")) {
+
                     u.showNewWindow("administracija", event);
                 } else if (logiraniKorisnik.getRole().equals("KORISNIK")) {
                     AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",

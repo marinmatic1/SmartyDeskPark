@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -7,24 +11,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.approvalsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="/style/administracija2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.approvalsController">
    <children>
-      <Label layoutX="34.0" layoutY="41.0" prefHeight="37.0" prefWidth="194.0" text="Upravljaj zahtjevima">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Label>
-      <TableView fx:id="tableTbl" layoutX="14.0" layoutY="78.0" prefHeight="177.0" prefWidth="569.0">
+      <TableView fx:id="tableTbl" editable="true" layoutX="14.0" layoutY="78.0" prefHeight="238.0" prefWidth="712.0">
          <columns>
-            <TableColumn fx:id="nameTbl" prefWidth="62.0" text="Ime" />
-            <TableColumn fx:id="usernameTbl" prefWidth="105.0" text="Korisnicko ime" />
-            <TableColumn fx:id="passwordTbl" prefWidth="71.0" text="Lozinka" />
-            <TableColumn fx:id="platesTbl" prefWidth="143.0" text="Registracijska tablica" />
-            <TableColumn fx:id="roleTbl" prefWidth="74.0" text="Uloga" />
-            <TableColumn fx:id="approvalTbl" prefWidth="78.0" text="Potvrda" />
+            <TableColumn fx:id="nameTbl" prefWidth="88.0" text="Ime" />
+            <TableColumn fx:id="usernameTbl" prefWidth="132.0" text="Korisničko ime" />
+            <TableColumn fx:id="passwordTbl" prefWidth="104.0" text="Lozinka" />
+            <TableColumn fx:id="platesTbl" prefWidth="131.0" text="Registracijska tablica" />
+            <TableColumn fx:id="roleTbl" prefWidth="122.0" text="Uloga" />
+            <TableColumn fx:id="approvalTbl" prefWidth="117.0" text="Potvrda" />
          </columns>
       </TableView>
-      <Button fx:id="backBtn" layoutX="438.0" layoutY="334.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Administracija" />
-      <Button fx:id="deleteBtn" layoutX="327.0" layoutY="265.0" mnemonicParsing="false" onAction="#deleteZahtjev" prefHeight="25.0" prefWidth="111.0" text="Izbrisi zahtjev" />
-      <Button fx:id="approveBtn" layoutX="454.0" layoutY="265.0" mnemonicParsing="false" onAction="#approveAction" prefHeight="25.0" prefWidth="111.0" text="Potvrdi korisnika" />
+      <Button fx:id="deleteBtn" layoutX="381.0" layoutY="333.0" mnemonicParsing="false" onAction="#deleteZahtjev" prefHeight="30.0" prefWidth="165.0" text="Izbriši zahtjev">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="approveBtn" layoutX="561.0" layoutY="333.0" mnemonicParsing="false" onAction="#approveAction" prefHeight="30.0" prefWidth="165.0" text="Potvrdi korisnika">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="backBtn" layoutX="539.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Administracija">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="odjavaBtn" layoutX="539.0" layoutY="517.0" mnemonicParsing="false" onAction="#odjava" prefHeight="30.0" prefWidth="187.0" text="Odjavi se" textFill="#110d0d">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField layoutX="14.0" layoutY="39.0" prefHeight="30.0" prefWidth="225.0" text="Upravljaj zahtjevima">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

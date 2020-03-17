@@ -7,16 +7,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.administracijaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="/style/administracija.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.administracijaController">
    <children>
-      <Label layoutX="34.0" layoutY="33.0" prefHeight="37.0" prefWidth="220.0" text="Dobrodošli u administraciju">
+      <Label layoutX="34.0" layoutY="32.0" prefHeight="37.0" prefWidth="220.0" text="Dobrodošli u administraciju">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="approvalsBtn" layoutX="34.0" layoutY="96.0" mnemonicParsing="false" onAction="#openApprovals" prefHeight="48.0" prefWidth="201.0" text="Zahtjevi" />
-      <Button fx:id="usersBtn" layoutX="34.0" layoutY="164.0" mnemonicParsing="false" onAction="#openUsers" prefHeight="48.0" prefWidth="201.0" text="Upravljaj korisnicima" />
-      <Button fx:id="reservationsBtn" layoutX="34.0" layoutY="234.0" mnemonicParsing="false" onAction="#openReservations" prefHeight="48.0" prefWidth="201.0" text="Upravljaj rezervacijima" />
-      <Button fx:id="backBtn" layoutX="440.0" layoutY="333.0" mnemonicParsing="false" onAction="#back" prefHeight="37.0" prefWidth="123.0" text="Back" />
+      <Button fx:id="approvalsBtn" layoutX="34.0" layoutY="96.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openApprovals" prefHeight="50.0" prefWidth="255.0" text="Zahtjevi" textFill="#faf7f7">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="usersBtn" layoutX="34.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openUsers" prefHeight="50.0" prefWidth="255.0" text="Upravljaj korisnicima" textFill="#fbf6f6">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="reservationsBtn" layoutX="34.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openReservations" prefHeight="50.0" prefWidth="255.0" text="Upravljaj rezervacijima" textFill="#fbf6f6">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
+      <Button fx:id="backBtn" layoutX="516.0" layoutY="457.0" mnemonicParsing="false" onAction="#back" prefHeight="30.0" prefWidth="130.0" text="Odjavi se" textFill="#fbf6f6">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

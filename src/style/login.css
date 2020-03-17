@@ -1,0 +1,21 @@
+.root{
+    -fx-background-image: url("naslovnica.png");
+
+}
+.button {
+  -fx-background-color: lightblue;
+  -fx-border: none;
+  -fx-color: white;
+  -fx-border-radius: 30px;
+  -fx-padding: 15px 28px;
+  -fx-text-align: center;
+  -fx-display: inline-block;
+}
+.button:hover {
+  -fx-background-color: #B40A1B; /* Red */
+  -fx-color: white;
+}
+.label{
+    -fx-text-fill: #faf7f7;
+    -fx-color: white;
+}

@@ -7,25 +7,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.reservationsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="/style/administracija2.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.reservationsController">
    <children>
-      <Label layoutX="33.0" layoutY="24.0" prefHeight="37.0" prefWidth="220.0" text="Sve rezervacije">
+      <TableView fx:id="tableTbl" layoutX="14.0" layoutY="78.0" prefHeight="238.0" prefWidth="712.0">
+         <columns>
+            <TableColumn fx:id="vrijemeodTbl" prefWidth="156.0" text="Vrijeme od: " />
+            <TableColumn fx:id="vrijemedoTbl" prefWidth="153.0" text="Vrijeme do: " />
+            <TableColumn fx:id="iduserTbl" prefWidth="125.0" text="Korisnik usluge: " />
+            <TableColumn fx:id="platesTbl" prefWidth="184.0" text="Registracijska tablica" />
+         </columns>
+      </TableView>
+      <Button fx:id="deleteBtn" layoutX="381.0" layoutY="333.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="30.0" prefWidth="165.0" text="Izbriši rezervaciju">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="openAddRBtn" layoutX="561.0" layoutY="333.0" mnemonicParsing="false" onAction="#openAddreservation" prefHeight="30.0" prefWidth="165.0" text="Dodaj rezervaciju">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="backBtn" layoutX="539.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Administracija">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="odjavaBtn" layoutX="539.0" layoutY="518.0" mnemonicParsing="false" onAction="#odjava" prefHeight="30.0" prefWidth="187.0" text="Odjavi se" textFill="#1e1b1b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField layoutX="14.0" layoutY="40.0" prefHeight="30.0" prefWidth="225.0" text="Sve rezervacije">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
-      </Label>
-      <TableView fx:id="tableTbl" layoutX="14.0" layoutY="61.0" prefHeight="178.0" prefWidth="545.0">
-         <columns>
-            <TableColumn fx:id="idTbl" prefWidth="35.0" text="Id" />
-            <TableColumn fx:id="vrijemeodTbl" prefWidth="126.0" text="Vrijeme od: " />
-            <TableColumn fx:id="vrijemedoTbl" prefWidth="117.0" text="Vrijeme do: " />
-            <TableColumn fx:id="iduserTbl" prefWidth="112.0" text="Korisnik usluge: " />
-            <TableColumn fx:id="platesTbl" prefWidth="143.0" text="Registracijska tablica" />
-         </columns>
-      </TableView>
-      <Button fx:id="backBtn" layoutX="448.0" layoutY="359.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="111.0" text="Administracija" />
-      <Button fx:id="deleteBtn" layoutX="448.0" layoutY="246.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="25.0" prefWidth="111.0" text="Izbriši rezervaciju" />
-      <Button fx:id="openAddRBtn" layoutX="448.0" layoutY="319.0" mnemonicParsing="false" onAction="#openAddreservation" prefHeight="27.0" prefWidth="111.0" text="Dodaj rezervaciju" />
+      </TextField>
    </children>
 </AnchorPane>

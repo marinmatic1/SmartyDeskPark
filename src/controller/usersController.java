@@ -31,12 +31,20 @@ public class usersController implements Initializable {
     @FXML
     Button backBtn;
     @FXML
+    Button odjavaBtn;
+    @FXML
     Button openAddUserBtn;
 
     public void back(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("administracija", ev);
     }
+
+    public void odjava(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("login", ev);
+    }
+
     public void openAdduser(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("adduser", ev);
@@ -52,7 +60,7 @@ public class usersController implements Initializable {
             return;
         }
         else{
-            user.setApproval(0);
+            user.setApproval(2);
             Users.update(user);
             AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
                     "Korisnik "+ user.getName() + " uspješno izbrisan");

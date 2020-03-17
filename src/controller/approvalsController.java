@@ -39,6 +39,8 @@ public class approvalsController implements Initializable {
     Button deleteBtn;
     @FXML
     Button backBtn;
+    @FXML
+    Button odjavaBtn;
 
     @FXML
     Button approveBtn;
@@ -70,6 +72,12 @@ public class approvalsController implements Initializable {
         Utils u = new Utils();
         u.showNewWindow("administracija", ev);
     }
+
+    public void odjava(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("login", ev);
+    }
+
     public void deleteZahtjev(ActionEvent ev){
         Window owner = approveBtn.getScene().getWindow();
         Users u = (Users) this.tableTbl.getSelectionModel().getSelectedItem();

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adduserController">
+<AnchorPane stylesheets="/style/administracija.css" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adduserController">
    <children>
       <Label layoutX="33.0" layoutY="24.0" prefHeight="37.0" prefWidth="220.0" text="Dodaj korisnika">
          <font>
