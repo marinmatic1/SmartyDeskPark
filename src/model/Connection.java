@@ -12,9 +12,9 @@ public class Connection {
     private java.sql.Connection connection;
 
     public Connection() {
-        this.host = "localhost";//62.31.23.215
-        this.user = "root";//matic
-        this.password = "";//matic312
+        this.host = "62.31.23.215";//
+        this.user = "matic";//
+        this.password = "matic312";//matic312
         this.db = "smartpark";
     }
 

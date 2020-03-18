@@ -35,11 +35,26 @@ public class adduserController implements Initializable {
     Button dodajBtn;
     @FXML
     Button backBtn;
+    @FXML
+    Button administracijaBtn;
+    @FXML
+    Button odjavaBtn;
 
 
 
     String Role;
     ObservableList<String> role = FXCollections.observableArrayList();
+
+    public void odjava(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("login", ev);
+    }
+
+    public void openAdministracija(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("administracija", ev);
+    }
+
 
     public void back(ActionEvent ev){
         Utils u = new Utils();

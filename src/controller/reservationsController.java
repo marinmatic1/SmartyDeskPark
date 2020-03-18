@@ -32,8 +32,7 @@ public class reservationsController implements Initializable {
 
     @FXML
     Button deleteBtn;
-    @FXML
-    Button openAddRBtn;
+
     @FXML
     Button backBtn;
     @FXML
@@ -47,11 +46,6 @@ public class reservationsController implements Initializable {
     public void odjava(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("login", ev);
-    }
-
-    public void openAddreservation(ActionEvent ev){
-        Utils u = new Utils();
-        u.showNewWindow("addreservation", ev);
     }
 
     public void deleteReservation(ActionEvent ev){

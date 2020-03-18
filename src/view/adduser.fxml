@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -7,24 +11,55 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="/style/administracija.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adduserController">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="/style/administracija3.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adduserController">
    <children>
-      <Label layoutX="33.0" layoutY="24.0" prefHeight="37.0" prefWidth="220.0" text="Dodaj korisnika">
+      <Label layoutX="33.0" layoutY="28.0" prefHeight="37.0" prefWidth="220.0" text="Dodaj korisnika" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="202.0" prefHeight="27.0" prefWidth="176.0" text="Uloga" />
-      <Label layoutX="33.0" layoutY="148.0" prefHeight="27.0" prefWidth="176.0" text="Lozinka:" />
-      <Label layoutX="33.0" layoutY="175.0" prefHeight="27.0" prefWidth="176.0" text="Registracijska tablica:" />
-      <Label layoutX="33.0" layoutY="121.0" prefHeight="27.0" prefWidth="176.0" text="Korisnicko ime:" />
-      <Label layoutX="33.0" layoutY="94.0" prefHeight="27.0" prefWidth="176.0" text="Ime:" />
-      <Button fx:id="dodajBtn" layoutX="383.0" layoutY="245.0" mnemonicParsing="false" onAction="#addUser" prefHeight="27.0" prefWidth="150.0" text="Dodaj korisnika" />
-      <ChoiceBox fx:id="roleChoice" layoutX="221.0" layoutY="203.0" prefHeight="25.0" prefWidth="306.0" />
-      <TextField fx:id="plateTxt" layoutX="221.0" layoutY="175.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi registracijsku tablicu" />
-      <TextField fx:id="passwordTxt" layoutX="221.0" layoutY="148.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi lozinku" />
-      <TextField fx:id="usernameTxt" layoutX="221.0" layoutY="121.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi korisnicko ime" />
-      <TextField fx:id="nameTxt" layoutX="221.0" layoutY="94.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi ime" />
-      <Button fx:id="backBtn" layoutX="383.0" layoutY="333.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="150.0" text="Svi korisnici" />
+      <Label layoutX="33.0" layoutY="259.0" prefHeight="27.0" prefWidth="176.0" text="Uloga" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="175.0" prefHeight="27.0" prefWidth="176.0" text="Lozinka:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="216.0" prefHeight="27.0" prefWidth="176.0" text="Registracijska tablica:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="135.0" prefHeight="27.0" prefWidth="176.0" text="Korisničko ime:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="94.0" prefHeight="27.0" prefWidth="176.0" text="Ime:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="dodajBtn" layoutX="350.0" layoutY="300.0" mnemonicParsing="false" onAction="#addUser" prefHeight="30.0" prefWidth="165.0" text="Dodaj korisnika">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ChoiceBox fx:id="roleChoice" layoutX="209.0" layoutY="260.0" prefHeight="25.0" prefWidth="306.0" />
+      <TextField fx:id="plateTxt" layoutX="209.0" layoutY="216.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi registracijsku tablicu" />
+      <TextField fx:id="passwordTxt" layoutX="209.0" layoutY="175.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi lozinku" />
+      <TextField fx:id="usernameTxt" layoutX="209.0" layoutY="135.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi korisnicko ime" />
+      <TextField fx:id="nameTxt" layoutX="209.0" layoutY="94.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi ime" />
+      <Button fx:id="backBtn" layoutX="475.0" layoutY="430.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Svi korisnici">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="administracijaBtn" layoutX="475.0" layoutY="487.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#openAdministracija" prefHeight="50.0" prefWidth="187.0" text="Administracija">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="odjavaBtn" layoutX="475.0" layoutY="543.0" mnemonicParsing="false" onAction="#odjava" prefHeight="30.0" prefWidth="187.0" text="Odjavi se" textFill="#1e1b1b">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

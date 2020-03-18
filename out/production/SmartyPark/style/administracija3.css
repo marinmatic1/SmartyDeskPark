@@ -1,0 +1,20 @@
+.root{
+    -fx-background-color: lightblue;
+    -fx-background-image: url("color.png");
+}
+.button {
+  -fx-background-color: #faf7f7;
+  -fx-text-fill: #052555;
+  -fx-border-radius: 30px;
+  -fx-padding: 15px 28px;
+  -fx-text-align: center;
+}
+.button:hover {
+  -fx-background-color: #B40A1B; /* Red */
+  -fx-color: white;
+}
+.choice-box > role {
+     -fx-background-color: white;
+     -fx-mark-color: red;
+     -fx-text-fill: black;
+     }

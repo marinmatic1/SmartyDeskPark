@@ -17,15 +17,10 @@
             <TableColumn fx:id="platesTbl" prefWidth="184.0" text="Registracijska tablica" />
          </columns>
       </TableView>
-      <Button fx:id="deleteBtn" layoutX="381.0" layoutY="333.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="30.0" prefWidth="165.0" text="Izbriši rezervaciju">
+      <Button fx:id="deleteBtn" layoutX="561.0" layoutY="336.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="30.0" prefWidth="165.0" text="Izbriši rezervaciju">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="openAddRBtn" layoutX="561.0" layoutY="333.0" mnemonicParsing="false" onAction="#openAddreservation" prefHeight="30.0" prefWidth="165.0" text="Dodaj rezervaciju">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
       <Button fx:id="backBtn" layoutX="539.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Administracija">
          <font>
             <Font name="System Bold" size="12.0" />
