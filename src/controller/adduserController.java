@@ -66,24 +66,32 @@ public class adduserController implements Initializable {
         Utils u = new Utils();
         u.showNewWindow("users", ev);
     }
-    public void addUser(){
+    public void addUser() {
         String name = nameTxt.getText();
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
-        String plates =plateTxt.getText();
+        String plates = plateTxt.getText();
+
         Window owner = dodajBtn.getScene().getWindow();
 
-        if(name.equals("") || username.equals("")|| password.equals("") || plates.equals("") || Role.equals("")){
+        if (name.equals("") || username.equals("") || password.equals("") || plates.equals("") ) {
             AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
                     "Svi podaci nisu unešeni");
+
             return;
         }
+        else if( Role==null) {
+                AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                        "Niste izabrali ulogu. Molim izaberite ulogu! ");
+        } else {
 
-        Users u = new Users(0,name,username,password,plates,Role,1);
-        Users.add(u);
-        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
-                "Korisnik uspješno dodan");
-        //popuniKorisnike();
+            Users u = new Users(0, name, username, password, plates, Role, 1);
+            Users.add(u);
+            //System.out.println(role);
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
+                    "Korisnik uspješno dodan");
+            //popuniKorisnike();
+        }
     }
 
     @Override
@@ -96,6 +104,7 @@ public class adduserController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 Role=(role.get(newValue.intValue()));
+
             }
         });
 

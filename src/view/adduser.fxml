@@ -47,7 +47,7 @@
       <TextField fx:id="passwordTxt" layoutX="209.0" layoutY="175.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi lozinku" />
       <TextField fx:id="usernameTxt" layoutX="209.0" layoutY="135.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi korisnicko ime" />
       <TextField fx:id="nameTxt" layoutX="209.0" layoutY="94.0" prefHeight="27.0" prefWidth="306.0" promptText="Unesi ime" />
-      <Button fx:id="backBtn" layoutX="475.0" layoutY="430.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Svi korisnici">
+      <Button fx:id="backBtn" layoutX="475.0" layoutY="430.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="187.0" text="Nazad">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
