@@ -18,6 +18,7 @@ public class Utils {
             loader.load();
             Parent root = loader.getRoot();
             Scene scene = new Scene (root);
+            stage.setTitle(viewname);
             stage.setScene(scene);
             ((Node)(e.getSource())).getScene().getWindow().hide();
             stage.show();
