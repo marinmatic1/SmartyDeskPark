@@ -4,8 +4,8 @@
 
 }
 .button {
-  -fx-background-color: #faf7f7;
-  -fx-text-fill: #052555;
+  -fx-background-color: #faf7f7; /* White */
+  -fx-text-fill: #052555; /* Blue */
   -fx-border-radius: 30px;
   -fx-padding: 15px 28px;
   -fx-text-align: center;

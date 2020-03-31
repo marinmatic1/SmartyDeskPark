@@ -11,10 +11,12 @@
    <children>
       <TableView fx:id="tableTbl" layoutX="14.0" layoutY="78.0" prefHeight="238.0" prefWidth="712.0">
          <columns>
-            <TableColumn fx:id="vrijemeodTbl" prefWidth="156.0" text="Vrijeme od: " />
-            <TableColumn fx:id="vrijemedoTbl" prefWidth="153.0" text="Vrijeme do: " />
-            <TableColumn fx:id="iduserTbl" prefWidth="125.0" text="Korisnik usluge: " />
-            <TableColumn fx:id="platesTbl" prefWidth="184.0" text="Registracijska tablica" />
+            <TableColumn fx:id="datumodTbl" prefWidth="88.0" text="Datum od:" />
+            <TableColumn fx:id="vrijemeodTbl" prefWidth="91.0" text="Vrijeme od: " />
+            <TableColumn fx:id="datumdoTbl" prefWidth="101.0" text="Datum do:" />
+            <TableColumn fx:id="vrijemedoTbl" minWidth="0.0" prefWidth="118.0" text="Vrijeme do:" />
+            <TableColumn fx:id="userTbl" prefWidth="118.0" text="Korisnik usluge" />
+            <TableColumn fx:id="platesTbl" prefWidth="167.0" text="Registracijska tablica" />
          </columns>
       </TableView>
       <Button fx:id="deleteBtn" layoutX="561.0" layoutY="336.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="30.0" prefWidth="165.0" text="Izbriši rezervaciju">
@@ -36,5 +38,10 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </TextField>
+      <Button fx:id="refreshBtn" layoutX="626.0" layoutY="25.0" mnemonicParsing="false" onAction="#refresh" prefHeight="30.0" prefWidth="100.0" text="Osvježi">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

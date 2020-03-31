@@ -38,14 +38,13 @@ public class approvalsController implements Initializable {
     @FXML
     Button deleteBtn;
     @FXML
+    Button refreshBtn;
+    @FXML
     Button backBtn;
     @FXML
     Button odjavaBtn;
-
     @FXML
     Button approveBtn;
-
-
 
 
     public void approveAction (ActionEvent ev){
@@ -64,8 +63,6 @@ public class approvalsController implements Initializable {
                     "Korisnik "+ user.getName() + " uspješno odobren");
             popuniKorisnike();
         }
-
-
     }
 
     public void back(ActionEvent ev){
@@ -76,6 +73,11 @@ public class approvalsController implements Initializable {
     public void odjava(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("login", ev);
+    }
+
+    public void refresh(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("approvals", ev);
     }
 
     public void deleteZahtjev(ActionEvent ev){

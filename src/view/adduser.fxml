@@ -61,5 +61,10 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Button>
+      <Button fx:id="refreshBtn" layoutX="209.0" layoutY="300.0" mnemonicParsing="false" onAction="#refresh" prefHeight="30.0" prefWidth="130.0" text="Očisti unos">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

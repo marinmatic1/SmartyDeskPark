@@ -2,18 +2,20 @@ package model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.List;
 
 public class Reservation {
     public Reservation() {
     }
     private int id;
+    private Date datum_od;
     private String vrijeme_od;
+    private Date datum_do;
     private String vrijeme_do;
     private int user_reservedID;
 
@@ -21,19 +23,38 @@ public class Reservation {
     public String getPlates() { return plates; }
     public void setPlates(String plates) { this.plates = plates; }
 
+    private String imekorisnika;
+    public String getImekorisnika() { return imekorisnika; }
+    public void setImekorisnika(String imekorisnika) { this.imekorisnika = imekorisnika; }
 
-    public Reservation(int id, String vrijeme_od, String vrijeme_do, int user_reservedID) {
+
+    public Reservation(int id, Date datum_od, String vrijeme_od, Date datum_do, String vrijeme_do, int user_reservedID) {
         this.id = id;
+        this.datum_od = datum_od;
         this.vrijeme_od = vrijeme_od;
+        this.datum_do = datum_do;
         this.vrijeme_do = vrijeme_do;
         this.user_reservedID = user_reservedID;
     }
 
-    public Reservation(int id, String vrijeme_od, String vrijeme_do, int user_reservedID, String plates) {
+    public Reservation(int id, Date datum_od, String vrijeme_od, Date datum_do, String vrijeme_do, int user_reservedID, String plates) {
         this.id = id;
+        this.datum_od = datum_od;
         this.vrijeme_od = vrijeme_od;
+        this.datum_do = datum_do;
         this.vrijeme_do = vrijeme_do;
         this.user_reservedID = user_reservedID;
+        this.plates = plates;
+    }
+
+    public Reservation(int id, Date datum_od, String vrijeme_od, Date datum_do, String vrijeme_do, int user_reservedID, String imekorisnika, String plates) {
+        this.id = id;
+        this.datum_od = datum_od;
+        this.vrijeme_od = vrijeme_od;
+        this.datum_do = datum_do;
+        this.vrijeme_do = vrijeme_do;
+        this.user_reservedID = user_reservedID;
+        this.imekorisnika = imekorisnika;
         this.plates = plates;
     }
 
@@ -45,12 +66,28 @@ public class Reservation {
         this.id = id;
     }
 
+    public java.sql.Date getDatum_od() {
+        return (java.sql.Date) datum_od;
+    }
+
+    public void setDatum_od(Date datum_od) {
+        this.datum_od = datum_od;
+    }
+
     public String getVrijeme_od() {
         return vrijeme_od;
     }
 
     public void setVrijeme_od(String vrijeme_od) {
         this.vrijeme_od = vrijeme_od;
+    }
+
+    public java.sql.Date getDatum_do() {
+        return (java.sql.Date) datum_do;
+    }
+
+    public void setDatum_do(Date datum_do) {
+        this.datum_do = datum_do;
     }
 
     public String getVrijeme_do() {
@@ -72,11 +109,13 @@ public class Reservation {
 
     public static Reservation add(Reservation reservation) {
         try {
-            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("INSERT INTO reservations VALUES (null, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("INSERT INTO reservations VALUES (null, ?, ?, ?, ?, ?)", PreparedStatement.RETURN_GENERATED_KEYS);
             stmnt.setInt(1, reservation.getId());
-            stmnt.setString(2, reservation.getVrijeme_od());
-            stmnt.setString(3, reservation.getVrijeme_do());
-            stmnt.setInt(4, reservation.getUser_reservedID());
+            stmnt.setDate(2, reservation.getDatum_od());
+            stmnt.setString(3, reservation.getVrijeme_od());
+            stmnt.setDate(4, reservation.getDatum_do());
+            stmnt.setString(5, reservation.getVrijeme_do());
+            stmnt.setInt(6, reservation.getUser_reservedID());
             stmnt.executeUpdate();
 
             ResultSet rs = stmnt.getGeneratedKeys();
@@ -102,9 +141,11 @@ public class Reservation {
             if (rs.next()){
                 return new Reservation(
                         rs.getInt(1),
-                        rs.getString(2),
+                        rs.getDate(2),
                         rs.getString(3),
-                        rs.getInt(4)
+                        rs.getDate(4),
+                        rs.getString(5),
+                        rs.getInt(6)
                 );
             }
             stmnt.close();
@@ -130,11 +171,13 @@ public class Reservation {
 
     public static boolean update(Reservation reservation) {
         try {
-            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("UPDATE reservations SET vrijeme_od=?, vrijeme_do=?, user_rezervirao_fk  WHERE ID=?");
-            stmnt.setString(1, reservation.getVrijeme_od());
-            stmnt.setString(2, reservation.getVrijeme_do());
-            stmnt.setInt(3, reservation.getUser_reservedID());
-            stmnt.setInt(4, reservation.getId());
+            PreparedStatement stmnt = Database.CONNECTION.prepareStatement("UPDATE reservations SET datum_od=?, vrijeme_od=?, datum_do=?, vrijeme_do=?, user_rezervirao_fk  WHERE ID=?");
+            stmnt.setDate(1, reservation.getDatum_od());
+            stmnt.setString(2, reservation.getVrijeme_od());
+            stmnt.setDate(3, reservation.getDatum_do());
+            stmnt.setString(4, reservation.getVrijeme_do());
+            stmnt.setInt(5, reservation.getUser_reservedID());
+            stmnt.setInt(6, reservation.getId());
             stmnt.executeUpdate();
             stmnt.close();
             return true;
@@ -154,9 +197,11 @@ public class Reservation {
             while(rs.next()){
                 reservations.add(new Reservation(
                         rs.getInt(1),
-                        rs.getString(2),
+                        rs.getDate(2),
                         rs.getString(3),
-                        rs.getInt(4)
+                        rs.getDate(4),
+                        rs.getString(5),
+                        rs.getInt(6)
                 ));
             }
             stmnt.close();
@@ -172,7 +217,7 @@ public class Reservation {
         ObservableList<Reservation> reservations = FXCollections.observableArrayList();
         try {
             Statement stmnt = Database.CONNECTION.createStatement();
-            ResultSet rs = stmnt.executeQuery("SELECT reservations.ID, reservations.vrijeme_od, reservations.vrijeme_do, reservations.user_rezervirao_fk, users.atablica\n" +
+            ResultSet rs = stmnt.executeQuery("SELECT reservations.ID, reservations.datum_od, reservations.vrijeme_od, reservations.datum_do, reservations.vrijeme_do, reservations.user_rezervirao_fk,users.name, users.atablica\n" +
                     "FROM reservations, users\n" +
                     "WHERE user_rezervirao_fk=users.ID");
 
@@ -180,10 +225,13 @@ public class Reservation {
             while(rs.next()){
                 reservations.add(new Reservation(
                         rs.getInt(1),
-                        rs.getString(2),
+                        rs.getDate(2),
                         rs.getString(3),
-                        rs.getInt(4),
-                        rs.getString(5)
+                        rs.getDate(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8)
                 ));
             }
             return reservations;
@@ -193,6 +241,4 @@ public class Reservation {
         }
 
     }
-
-
 }

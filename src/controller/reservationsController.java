@@ -22,11 +22,15 @@ public class reservationsController implements Initializable {
     TableView tableTbl;
 
     @FXML
+    TableColumn datumodTbl;
+    @FXML
     TableColumn vrijemeodTbl;
+    @FXML
+    TableColumn datumdoTbl;
     @FXML
     TableColumn vrijemedoTbl;
     @FXML
-    TableColumn iduserTbl;
+    TableColumn userTbl;
     @FXML
     TableColumn platesTbl;
 
@@ -37,6 +41,13 @@ public class reservationsController implements Initializable {
     Button backBtn;
     @FXML
     Button odjavaBtn;
+    @FXML
+    Button refreshBtn;
+
+    public void refresh(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("reservations", ev);
+    }
 
     public void back(ActionEvent ev){
         Utils u = new Utils();
@@ -67,9 +78,11 @@ public class reservationsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        this.datumodTbl.setCellValueFactory(new PropertyValueFactory<>("datum_od"));
         this.vrijemeodTbl.setCellValueFactory(new PropertyValueFactory<>("vrijeme_od"));
+        this.datumdoTbl.setCellValueFactory(new PropertyValueFactory<>("datum_do"));
         this.vrijemedoTbl.setCellValueFactory(new PropertyValueFactory<>("vrijeme_do"));
-        this.iduserTbl.setCellValueFactory(new PropertyValueFactory<>("user_reservedID"));
+        this.userTbl.setCellValueFactory(new PropertyValueFactory<>("imekorisnika"));
         this.platesTbl.setCellValueFactory(new PropertyValueFactory<>("plates"));
 
         popuniRezervacije();

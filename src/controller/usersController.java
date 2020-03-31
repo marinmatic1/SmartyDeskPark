@@ -33,8 +33,39 @@ public class usersController implements Initializable {
     @FXML
     Button odjavaBtn;
     @FXML
+    Button refreshBtn;
+    @FXML
     Button openAddUserBtn;
+    @FXML
+    Button setAdminBtn;
 
+    public void refresh(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("users", ev);
+    }
+
+    public void setAdmin (ActionEvent ev) throws Exception {
+        Window owner = setAdminBtn.getScene().getWindow();
+        Users user = (Users) this.tableTbl.getSelectionModel().getSelectedItem();
+
+        if (user==null){
+            AlertHelper.showAlert(Alert.AlertType.ERROR, owner, "Form Error!",
+                    "Označite korisnika za postavljanje");
+            return;
+        }
+        else if (user.getRole().equals("ADMIN")){
+            AlertHelper.showAlert(Alert.AlertType.WARNING, owner, "Upozorenje!",
+                    "Korisnik "+ user.getName() + " je već postavljen za administratora. Molim izaberite drugog korisnika");
+            return;
+        }
+        else{
+            user.setRole("ADMIN");
+            Users.update(user);
+            AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
+                    "Korisnik "+ user.getName() + " uspješno postavljen za administratora");
+            popuniKorisnike();
+        }
+    }
     public void back(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("administracija", ev);

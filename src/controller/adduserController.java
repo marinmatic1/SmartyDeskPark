@@ -39,7 +39,8 @@ public class adduserController implements Initializable {
     Button administracijaBtn;
     @FXML
     Button odjavaBtn;
-
+    @FXML
+    Button refreshBtn;
 
 
     String Role;
@@ -48,6 +49,11 @@ public class adduserController implements Initializable {
     public void odjava(ActionEvent ev){
         Utils u = new Utils();
         u.showNewWindow("login", ev);
+    }
+
+    public void refresh(ActionEvent ev){
+        Utils u = new Utils();
+        u.showNewWindow("adduser", ev);
     }
 
     public void openAdministracija(ActionEvent ev){
@@ -75,7 +81,7 @@ public class adduserController implements Initializable {
 
         Users u = new Users(0,name,username,password,plates,Role,1);
         Users.add(u);
-        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspijeh!",
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
                 "Korisnik uspješno dodan");
         //popuniKorisnike();
     }
