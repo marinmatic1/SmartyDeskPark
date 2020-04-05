@@ -16,6 +16,7 @@ import model.AlertHelper;
 import model.Users;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class adduserController implements Initializable {
@@ -52,8 +53,14 @@ public class adduserController implements Initializable {
     }
 
     public void refresh(ActionEvent ev){
-        Utils u = new Utils();
-        u.showNewWindow("adduser", ev);
+        try {
+            this.nameTxt.clear();
+            this.usernameTxt.clear();
+            this.passwordTxt.clear();
+            this.plateTxt.clear();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void openAdministracija(ActionEvent ev){

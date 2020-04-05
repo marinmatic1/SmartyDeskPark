@@ -40,8 +40,10 @@ public class usersController implements Initializable {
     Button setAdminBtn;
 
     public void refresh(ActionEvent ev){
-        Utils u = new Utils();
-        u.showNewWindow("users", ev);
+        Window owner = refreshBtn.getScene().getWindow();
+        popuniKorisnike();
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
+                "Podaci su osvježeni. ");
     }
 
     public void setAdmin (ActionEvent ev) throws Exception {

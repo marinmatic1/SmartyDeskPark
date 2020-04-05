@@ -76,8 +76,10 @@ public class approvalsController implements Initializable {
     }
 
     public void refresh(ActionEvent ev){
-        Utils u = new Utils();
-        u.showNewWindow("approvals", ev);
+        Window owner = refreshBtn.getScene().getWindow();
+        popuniKorisnike();
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
+                "Podaci su osvježeni. ");
     }
 
     public void deleteZahtjev(ActionEvent ev){

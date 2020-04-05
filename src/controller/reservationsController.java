@@ -45,8 +45,10 @@ public class reservationsController implements Initializable {
     Button refreshBtn;
 
     public void refresh(ActionEvent ev){
-        Utils u = new Utils();
-        u.showNewWindow("reservations", ev);
+        Window owner = refreshBtn.getScene().getWindow();
+        popuniRezervacije();
+        AlertHelper.showAlert(Alert.AlertType.CONFIRMATION, owner, "Uspjeh!",
+                "Podaci su osvježeni. ");
     }
 
     public void back(ActionEvent ev){
