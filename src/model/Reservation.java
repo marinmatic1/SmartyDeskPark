@@ -1,5 +1,6 @@
 package model;
 
+import controller.usersController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.sql.PreparedStatement;
@@ -234,6 +235,37 @@ public class Reservation {
                         rs.getString(8)
                 ));
             }
+            return reservations;
+        } catch (SQLException e) {
+            System.out.println("Nisam uspio izvuci rezervacije iz baze: " + e.getMessage());
+            return reservations;
+        }
+
+    }
+
+    public static List<Reservation> selectUserReservation() {
+
+        ObservableList<Reservation> reservations = FXCollections.observableArrayList();
+        try {
+            Statement stmnt = Database.CONNECTION.createStatement();
+            ResultSet rs = stmnt.executeQuery("SELECT reservations.ID, reservations.datum_od, reservations.vrijeme_od, reservations.datum_do, reservations.vrijeme_do, reservations.user_rezervirao_fk,users.name, users.atablica\n" +
+                    "FROM reservations, users\n" +
+                    "WHERE user_rezervirao_fk=users.ID");
+
+            usersController izabranikorisnik = new usersController();
+            while(rs.next()){
+                if(izabranikorisnik.getIzabraniIme().equals(rs.getString(7))){
+                reservations.add(new Reservation(
+                        rs.getInt(1),
+                        rs.getDate(2),
+                        rs.getString(3),
+                        rs.getDate(4),
+                        rs.getString(5),
+                        rs.getInt(6),
+                        rs.getString(7),
+                        rs.getString(8)
+                ));
+            }}
             return reservations;
         } catch (SQLException e) {
             System.out.println("Nisam uspio izvuci rezervacije iz baze: " + e.getMessage());

@@ -27,6 +27,8 @@ public class usersController implements Initializable {
     TableColumn roleTbl;
 
     @FXML
+    Button openURbtn;
+    @FXML
     Button deleteBtn;
     @FXML
     Button backBtn;
@@ -38,6 +40,27 @@ public class usersController implements Initializable {
     Button openAddUserBtn;
     @FXML
     Button setAdminBtn;
+
+    public static Users izabranikorisnik;
+
+    public void openUserReservations(ActionEvent ev){
+        Window owner = openURbtn.getScene().getWindow();
+        Users user = (Users) this.tableTbl.getSelectionModel().getSelectedItem();
+
+        if (user==null){
+            AlertHelper.showAlert(Alert.AlertType.WARNING, owner, "Upozorenje!",
+                    "Označite korisnika za pregled rezervacija. ");
+            return;
+        }
+        else{
+            this.izabranikorisnik = user;
+            Utils u = new Utils();
+            u.showNewWindow("userreservations", ev);
+        }
+    }
+    public int getIzabraniId(){ return izabranikorisnik.getId(); }
+    public String getIzabraniIme(){ return izabranikorisnik.getName(); }
+    public String getIzabraniUsername(){ return izabranikorisnik.getUsername(); }
 
     public void refresh(ActionEvent ev){
         Window owner = refreshBtn.getScene().getWindow();

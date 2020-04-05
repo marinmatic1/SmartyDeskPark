@@ -38,7 +38,6 @@ public class Connection {
                         this.db+"?user="+
                         this.user+"&password="+
                         this.password+"&useSSL=false";
-        System.out.println(connectionString);
         this.connection = DriverManager.getConnection(connectionString);
     }
     public void disconnect () throws Exception {
